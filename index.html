@@ -82,6 +82,27 @@
             text-decoration: underline;
         }
 
+        header .github-link {
+            margin-top: 20px;
+        }
+
+        header .github-link a {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        header .github-link a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
         /* Main Content */
         main {
             padding: 40px 0;
@@ -271,6 +292,108 @@
             transform: scale(1.05);
         }
 
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .project-title a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .project-title a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .project-language {
+            background: var(--bg-accent);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            gap: 12px;
+            color: var(--secondary-color);
+        }
+
+        .projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .view-all-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .view-all-link:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
         /* Footer */
         footer {
             background: var(--text-primary);
@@ -309,6 +432,16 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
         }
 
         /* Print Styles */
@@ -338,6 +471,9 @@
                 <span>📍 800 South Roselawn Avenue, APT 104, Artesia, N.M., 88210, U.S.A.</span>
                 <a href="tel:+15752316564">📞 +1 (575) 231-6564</a>
                 <a href="mailto:caraveo@me.com">✉️ caraveo@me.com</a>
+            </div>
+            <div class="github-link">
+                <a href="https://github.com/Caraveo" target="_blank" rel="noopener noreferrer">🔗 View My Projects on GitHub</a>
             </div>
         </div>
     </header>
@@ -433,6 +569,116 @@
                     <div class="skill-tags">
                         <span class="skill-tag">Social Strategy</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="projects-header">
+                <h2>Featured Projects</h2>
+                <a href="https://github.com/Caraveo" target="_blank" rel="noopener noreferrer" class="view-all-link">View All Projects →</a>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">
+                                <a href="https://github.com/Caraveo/Photon" target="_blank" rel="noopener noreferrer">Photon</a>
+                            </div>
+                        </div>
+                        <span class="project-language">Swift</span>
+                    </div>
+                    <div class="project-description">
+                        A modern macOS browser built with SwiftUI and WebKit, featuring integrated AI support (MLX, Ollama, OpenAI, Mistral) and a beautiful unified interface.
+                    </div>
+                    <a href="https://github.com/Caraveo/Photon" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">
+                                <a href="https://github.com/Caraveo/odyssey" target="_blank" rel="noopener noreferrer">Odyssey</a>
+                            </div>
+                        </div>
+                        <span class="project-language">Swift</span>
+                    </div>
+                    <div class="project-description">
+                        A beautiful macOS SwiftUI writing app with node-based canvas for organizing and creating original works using AI.
+                    </div>
+                    <a href="https://github.com/Caraveo/odyssey" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">
+                                <a href="https://github.com/Caraveo/pioneer" target="_blank" rel="noopener noreferrer">Pioneer</a>
+                            </div>
+                        </div>
+                        <span class="project-language">Swift</span>
+                    </div>
+                    <div class="project-description">
+                        🚀 The visual system architecture tool for startups. Design entire software systems visually—from iPhone apps to AWS backends—all in one beautiful interface. AI-powered code generation.
+                    </div>
+                    <a href="https://github.com/Caraveo/pioneer" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">
+                                <a href="https://github.com/Caraveo/Prometheus" target="_blank" rel="noopener noreferrer">Prometheus</a>
+                            </div>
+                        </div>
+                        <span class="project-language">Swift</span>
+                    </div>
+                    <div class="project-description">
+                        Built for macOS, Prometheus bridges the power of OpenAI's Shap-E model with a native SwiftUI interface for an effortless 3D-creation workflow. Create 3D models with just a descriptive prompt or an image.
+                    </div>
+                    <a href="https://github.com/Caraveo/Prometheus" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">
+                                <a href="https://github.com/Caraveo/Aske" target="_blank" rel="noopener noreferrer">Aske</a>
+                            </div>
+                        </div>
+                        <span class="project-language">Python</span>
+                    </div>
+                    <div class="project-description">
+                        A homebrew/pip verbose Python project initializer that helps you quickly set up new Python projects with best practices and proper structure.
+                    </div>
+                    <a href="https://github.com/Caraveo/Aske" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View on GitHub →
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <div class="project-title">
+                                <a href="https://github.com/Caraveo/Hephaestus" target="_blank" rel="noopener noreferrer">Hephaestus</a>
+                            </div>
+                        </div>
+                        <span class="project-language">Python</span>
+                    </div>
+                    <div class="project-description">
+                        Forge 3D Models Natively on Your Mac! A powerful tool for creating and working with 3D models on macOS.
+                    </div>
+                    <a href="https://github.com/Caraveo/Hephaestus" target="_blank" rel="noopener noreferrer" class="project-link">
+                        View on GitHub →
+                    </a>
                 </div>
             </div>
         </section>
