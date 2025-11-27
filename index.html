@@ -103,6 +103,31 @@
             transform: translateY(-2px);
         }
 
+        header .hire-me-button {
+            margin-top: 25px;
+        }
+
+        header .hire-me-button a {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 2px solid white;
+        }
+
+        header .hire-me-button a:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
         /* Main Content */
         main {
             padding: 40px 0;
@@ -474,6 +499,9 @@
             </div>
             <div class="github-link">
                 <a href="https://github.com/Caraveo" target="_blank" rel="noopener noreferrer">🔗 View My Projects on GitHub</a>
+            </div>
+            <div class="hire-me-button">
+                <a href="mailto:caraveo@me.com?subject=Hire%20Me%20-%20Job%20Opportunity">💼 Hire Me!</a>
             </div>
         </div>
     </header>
