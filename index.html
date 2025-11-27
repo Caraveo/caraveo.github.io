@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan Caraveo - Systems Architect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-accent: #eff6ff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-secondary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        header .title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        header .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        header .contact-info a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        header .contact-info a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        section {
+            background: var(--bg-primary);
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+        }
+
+        section h2::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: var(--primary-color);
+            margin-right: 15px;
+            border-radius: 2px;
+        }
+
+        /* Profile Section */
+        .profile {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .experience-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .experience-company {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+
+        .experience-date {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-top: 10px;
+        }
+
+        /* Education Section */
+        .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: var(--bg-accent);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .education-institution {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .education-year {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: var(--bg-accent);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Top Skills */
+        .top-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .top-skill {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .top-skill:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .title {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .experience-date {
+                margin-top: 10px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            section {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid var(--border-color);
+            }
+
+            header {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Jonathan Caraveo</h1>
+            <div class="title">Systems Architect</div>
+            <div class="contact-info">
+                <span>📍 800 South Roselawn Avenue, APT 104, Artesia, N.M., 88210, U.S.A.</span>
+                <a href="tel:+15752316564">📞 +1 (575) 231-6564</a>
+                <a href="mailto:caraveo@me.com">✉️ caraveo@me.com</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="profile">
+            <h2>Profile</h2>
+            <p>Results-oriented systems professional with over 20 years of experience in privately held enterprises. Proven track record in complex and smart work-intensive industries, delivering value and innovation in Finance, Business Strategy, and Corporate Planning.</p>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Founder</div>
+                        <div class="experience-company">Ziawe Inc.</div>
+                    </div>
+                    <div class="experience-date">2020 - Present</div>
+                </div>
+                <div class="experience-description">
+                    Founded a Research and Development company that specializes in Augmented Reality hardware.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Business Operations & Strategy</div>
+                        <div class="experience-company">Caraveo Enterprises</div>
+                    </div>
+                    <div class="experience-date">2000 - 2010</div>
+                </div>
+                <div class="experience-description">
+                    Implemented point of sale system, menu system, and social strategy, assisted the efficiency of business operations, and increased overall business finances, products, and processes.
+                </div>
+            </div>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <div class="education-title">PredictionX: Omens, Oracles, and Prophecies</div>
+                <div class="education-institution">Harvard X</div>
+                <div class="education-year">2022 - A course of study offered by HarvardX, an online learning initiative of Harvard University.</div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-title">Associate of Science in Mobile Development</div>
+                <div class="education-institution">Full Sail University</div>
+                <div class="education-year">2020 - Completed the requirements to be awarded the associate degree at Full Sail University.</div>
+            </div>
+        </section>
+
+        <section class="technical-skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Augmented Reality</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Augmented Reality</span>
+                        <span class="skill-tag">Virtual Reality</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C#/Unity</span>
+                        <span class="skill-tag">iOS Development</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Artificial Intelligence</span>
+                        <span class="skill-tag">Blockchain</span>
+                        <span class="skill-tag">Cloud Computing</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Systems & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Unix Scripting</span>
+                        <span class="skill-tag">Networking Protocols</span>
+                        <span class="skill-tag">Web Experience</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Business</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Social Strategy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="top-skills-section">
+            <h2>Top Skills</h2>
+            <div class="top-skills">
+                <span class="top-skill">People-First Approach</span>
+                <span class="top-skill">Creativity</span>
+                <span class="top-skill">Sales Approach</span>
+                <span class="top-skill">Tech Minded</span>
+                <span class="top-skill">Problem Resolution</span>
+                <span class="top-skill">Community Culture</span>
+                <span class="top-skill">Customer Satisfaction</span>
+                <span class="top-skill">Results-Driven</span>
+                <span class="top-skill">Education Oriented</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Jonathan Caraveo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
