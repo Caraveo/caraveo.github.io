@@ -167,6 +167,101 @@
             color: var(--text-secondary);
         }
 
+        /* Systems Architect Section */
+        .systems-architect-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .systems-architect-table th {
+            background: var(--bg-accent);
+            color: var(--primary-color);
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+        }
+
+        .systems-architect-table td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .systems-architect-table tr:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+
+        .systems-architect-table tr:hover {
+            background: var(--bg-accent);
+        }
+
+        /* Personal Info Section */
+        .personal-info {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .personal-info h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .personal-info ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .personal-info li {
+            margin-bottom: 8px;
+        }
+
+        .quote {
+            font-style: italic;
+            color: var(--text-secondary);
+            padding: 20px;
+            background: var(--bg-accent);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .quote-author {
+            margin-top: 10px;
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
         /* Experience Section */
         .experience-item {
             margin-bottom: 30px;
@@ -461,6 +556,24 @@
                 align-items: flex-start;
                 gap: 15px;
             }
+
+            .systems-architect-table {
+                font-size: 0.85rem;
+            }
+
+            .systems-architect-table th,
+            .systems-architect-table td {
+                padding: 8px;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .social-links a {
+                width: 100%;
+                text-align: center;
+            }
         }
 
         /* Print Styles */
@@ -504,6 +617,93 @@
         <section class="profile">
             <h2>Profile</h2>
             <p>Results-oriented systems professional with over 20 years of experience in privately held enterprises. Proven track record in complex and smart work-intensive industries, delivering value and innovation in Finance, Business Strategy, and Corporate Planning.</p>
+        </section>
+
+        <section class="systems-architect">
+            <h2>Systems Architect in Software Engineering</h2>
+            <p>A <strong>Systems Architect</strong> in software engineering is responsible for (3e Triple-E) <strong>end-to-end execution</strong> of a <strong>software platform</strong>, encompassing <strong>full-stack web</strong> and <strong>native software development</strong>. They go beyond traditional <strong>full-stack development</strong> by focusing on <strong>automation, scaffolding, and project management</strong> to streamline <strong>shipping</strong> and <strong>launching</strong> applications across multiple environments. Their role is heavily centered on <strong>execution</strong>, ensuring that ideas are not just planned but <strong>delivered</strong> at scale.</p>
+            
+            <h3 style="margin-top: 30px; margin-bottom: 15px; color: var(--primary-color);">Core Responsibilities of a Systems Architect</h3>
+            <table class="systems-architect-table">
+                <thead>
+                    <tr>
+                        <th>Responsibility</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Full-Stack Execution</strong></td>
+                        <td>Designing, developing, and deploying <strong>both front-end and back-end</strong> systems for <strong>web and native applications</strong>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Automated Scaffolding</strong></td>
+                        <td>Creating <strong>frameworks, templates, and CI/CD pipelines</strong> for rapid, repeatable development across platforms.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Platform Acceleration</strong></td>
+                        <td>Managing the workflow from <strong>concept to launch</strong>, optimizing for <strong>speed, efficiency, and maintainability</strong>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tech Decision-Making</strong></td>
+                        <td>Selecting <strong>scalable and efficient architectures</strong> tailored for both <strong>web-based and native software ecosystems</strong>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Operational Focus</strong></td>
+                        <td>Ensuring <strong>high availability, reliability, and performance</strong> of the <strong>entire software platform</strong>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Shipping Mentality</strong></td>
+                        <td>Relentlessly focused on <strong>execution</strong>, minimizing friction, and driving <strong>continuous delivery across platforms</strong>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Native Development</strong></td>
+                        <td>Architecting and optimizing <strong>native solutions</strong> (<em>iOS, Android, macOS, Windows, Linux, Consoles</em>) while balancing <strong>performance, maintainability, and user experience</strong>.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 20px; color: var(--text-secondary);">I am NOT an expert in all things... I would like to learn about Assembly Code, Hardware Engineering, and how to Deliver the best Products in the World! ♥️</p>
+            <p style="margin-top: 15px; color: var(--text-secondary);"><strong>💬 Ask me about <strong>Spatial Reality</strong></strong></p>
+        </section>
+
+        <section class="personal-info">
+            <h2>About Me</h2>
+            
+            <h3>Art</h3>
+            <p>Art has been a staple in my journey, allowing me to express the complexities of human identity through bold, evocative paintings. I think of myself as a curious individual, bold, a lost gem in the wild. Check out my paintings at: <a href="https://joncaraveo.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color);">JonCaraveo.com</a></p>
+            
+            <h3>⚡ Fun Fact</h3>
+            <p><strong>I am obsessed with space, the universe, celestial events.</strong></p>
+            
+            <h3>I have Faith in People</h3>
+            <p>I Believe in order to succeed in life you must have principles, believe in yourself, have a vision, and be a good person. No one is perfect (prime example right here.) You must have a healthy sense of humor. Enjoy life's Obstacles, and <strong>git push</strong>! 👨🏽‍💻</p>
+            
+            <ul>
+                <li>Principles.</li>
+                <li>Believe</li>
+                <li>Vision</li>
+            </ul>
+
+            <div class="quote">
+                "He who seeks truth shall find beauty.<br>
+                He who seeks beauty shall find vanity.<br>
+                He who seeks order shall find gratification.<br>
+                He who seeks gratification shall be disappointed.<br>
+                He who considers himself the servant of his fellow beings shall find the joy of self‑expression.<br>
+                He who seeks self‑expression shall fall into the pit of arrogance.<br>
+                Arrogance is incompatible with nature.<br>
+                Through nature the nature of the universe and the nature of man we shall seek truth.<br>
+                If we seek truth, we shall find beauty."
+                <div class="quote-author">~ Moshe Safdie</div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://logmic.xyz" target="_blank" rel="noopener noreferrer">🌐 logmic.xyz</a>
+                <a href="https://twitter.com/johnnycaraveo" target="_blank" rel="noopener noreferrer">🐦 X @johnnycaraveo</a>
+                <a href="https://linkedin.com/in/Caraveo" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+                <a href="https://joncaraveo.com" target="_blank" rel="noopener noreferrer">🎨 JonCaraveo.com</a>
+                <a href="https://artesiamint.com" target="_blank" rel="noopener noreferrer">🪙 artesiamint.com</a>
+            </div>
         </section>
 
         <section class="experience">
